@@ -1,5 +1,5 @@
 const PREFIX='drug-assistant:'+self.registration.scope+':';
-const CACHE=PREFIX+'v2-pages';
+const CACHE=PREFIX+'v3-theme-45af2a';
 const ASSETS=['./','./index.html','./style.css','./app.js','./core.js','./crypto.js','./seed.json','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png','./vendor/dexie.min.js','./vendor/xlsx.full.min.js','./vendor/pinyin-pro.js'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
